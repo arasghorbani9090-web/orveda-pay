@@ -29,6 +29,71 @@ const steps: { id: StepId; label: string }[] = [
   { id: "review", label: "Review" },
 ];
 
+type Field = {
+  name: string;
+  label: string;
+  type?: string;
+  placeholder?: string;
+  required?: boolean;
+  full?: boolean;
+  validate?: (value: string) => string | undefined;
+};
+
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+const stepMeta: Record<StepId, { title: string; desc: string }> = {
+  company: {
+    title: "Company information",
+    desc: "Tell us about your registered business entity.",
+  },
+  director: {
+    title: "Director information",
+    desc: "Details of the primary director or authorised signatory.",
+  },
+  contact: {
+    title: "Contact information",
+    desc: "How we can reach the business during onboarding.",
+  },
+  documents: {
+    title: "Document upload",
+    desc: "Upload clear copies of the required documents. Files are encrypted on upload.",
+  },
+  review: {
+    title: "Review & submit",
+    desc: "Confirm your details before submitting for compliance review.",
+  },
+};
+
+const stepFields: Record<StepId, Field[]> = {
+  company: [
+    { name: "companyName", label: "Company name", placeholder: "Acme Trading FZ-LLC", required: true },
+    { name: "registrationNumber", label: "Registration number", placeholder: "e.g. 1234567", required: true },
+    { name: "country", label: "Country of incorporation", placeholder: "United Arab Emirates", required: true },
+    { name: "businessActivity", label: "Business activity", placeholder: "Wholesale & trade", required: true },
+    { name: "website", label: "Company website (optional)", placeholder: "https://company.com", full: true },
+  ],
+  director: [
+    { name: "fullName", label: "Full name", placeholder: "Jane Alexandra Doe", required: true },
+    { name: "nationality", label: "Nationality", placeholder: "British", required: true },
+    { name: "dob", label: "Date of birth", type: "date", required: true },
+    { name: "passportNumber", label: "Passport number", placeholder: "P1234567", required: true },
+  ],
+  contact: [
+    {
+      name: "email",
+      label: "Email",
+      type: "email",
+      placeholder: "jane@company.com",
+      required: true,
+      validate: (v) => (emailRegex.test(v) ? undefined : "Enter a valid email address."),
+    },
+    { name: "phone", label: "Phone", type: "tel", placeholder: "+971 50 000 0000", required: true },
+    { name: "address", label: "Registered address", placeholder: "Street, City, Country, Postal code", required: true, full: true },
+  ],
+  documents: [],
+  review: [],
+};
+
 const requiredDocs = [
   "Passport Copy",
   "National ID",
@@ -54,17 +119,63 @@ export default function RegisterPage() {
   const [files, setFiles] = useState<UploadedFile[]>([]);
   const [dragOver, setDragOver] = useState(false);
   const [saved, setSaved] = useState(false);
+  const [values, setValues] = useState<Record<string, string>>({});
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [docError, setDocError] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
 
   const step = steps[stepIndex];
   const progress = Math.round(((stepIndex + 1) / steps.length) * 100);
 
-  const goNext = () =>
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setValues((v) => ({ ...v, [name]: value }));
+    setErrors((prev) => {
+      if (!prev[name]) return prev;
+      const next = { ...prev };
+      delete next[name];
+      return next;
+    });
+  };
+
+  const validateStep = (): boolean => {
+    if (step.id === "documents") {
+      const ok = files.some((f) => !f.error);
+      setDocError(
+        ok ? "" : "Please upload at least one required document to continue."
+      );
+      return ok;
+    }
+
+    const fields = stepFields[step.id] ?? [];
+    const newErrors: Record<string, string> = {};
+    fields.forEach((f) => {
+      const val = (values[f.name] ?? "").trim();
+      if (f.required && !val) {
+        newErrors[f.name] = "This field is required.";
+      } else if (val && f.validate) {
+        const msg = f.validate(val);
+        if (msg) newErrors[f.name] = msg;
+      }
+    });
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const goNext = () => {
+    if (!validateStep()) return;
     setStepIndex((i) => Math.min(i + 1, steps.length - 1));
+  };
   const goBack = () => setStepIndex((i) => Math.max(i - 1, 0));
+
+  const handleSubmit = () => {
+    if (!validateStep()) return;
+    setCompleted(true);
+  };
 
   const addFiles = useCallback((list: FileList | null) => {
     if (!list) return;
+    setDocError("");
     const next: UploadedFile[] = [];
     Array.from(list).forEach((file) => {
       const ext = "." + file.name.split(".").pop()?.toLowerCase();
@@ -154,7 +265,7 @@ export default function RegisterPage() {
                 "Save & continue later"
               )}
             </button>
-            <Link href="/dashboard" className="font-medium text-royal-600">
+            <Link href="/signin" className="font-medium text-royal-600">
               Sign In
             </Link>
           </div>
@@ -236,25 +347,29 @@ export default function RegisterPage() {
             >
               {completed ? (
                 <Success />
+              ) : step.id === "documents" ? (
+                <DocumentsStep
+                  files={files}
+                  dragOver={dragOver}
+                  setDragOver={setDragOver}
+                  onDrop={onDrop}
+                  onSelect={onSelect}
+                  inputRef={inputRef}
+                  removeFile={removeFile}
+                  formatSize={formatSize}
+                  docError={docError}
+                />
+              ) : step.id === "review" ? (
+                <ReviewStep files={files} />
               ) : (
-                <>
-                  {step.id === "company" && <CompanyStep />}
-                  {step.id === "director" && <DirectorStep />}
-                  {step.id === "contact" && <ContactStep />}
-                  {step.id === "documents" && (
-                    <DocumentsStep
-                      files={files}
-                      dragOver={dragOver}
-                      setDragOver={setDragOver}
-                      onDrop={onDrop}
-                      onSelect={onSelect}
-                      inputRef={inputRef}
-                      removeFile={removeFile}
-                      formatSize={formatSize}
-                    />
-                  )}
-                  {step.id === "review" && <ReviewStep files={files} />}
-                </>
+                <FieldsStep
+                  title={stepMeta[step.id].title}
+                  desc={stepMeta[step.id].desc}
+                  fields={stepFields[step.id]}
+                  values={values}
+                  errors={errors}
+                  onChange={handleChange}
+                />
               )}
             </motion.div>
           </AnimatePresence>
@@ -269,10 +384,7 @@ export default function RegisterPage() {
                 Back
               </button>
               {step.id === "review" ? (
-                <button
-                  onClick={() => setCompleted(true)}
-                  className="btn-emerald"
-                >
+                <button onClick={handleSubmit} className="btn-emerald">
                   Submit application <Check className="h-4 w-4" />
                 </button>
               ) : (
@@ -301,80 +413,88 @@ function StepHeading({ title, desc }: { title: string; desc: string }) {
 
 function Input({
   label,
+  name,
+  value,
+  error,
+  onChange,
   placeholder,
   type = "text",
 }: {
   label: string;
+  name: string;
+  value: string;
+  error?: string;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
   type?: string;
 }) {
   return (
     <div>
-      <label className="mb-1.5 block text-sm font-medium text-navy-700">
+      <label
+        htmlFor={name}
+        className="mb-1.5 block text-sm font-medium text-navy-700"
+      >
         {label}
       </label>
       <input
+        id={name}
+        name={name}
         type={type}
+        value={value}
+        onChange={onChange}
         placeholder={placeholder}
-        className="w-full rounded-xl border border-cloud bg-white px-4 py-3 text-sm text-navy-800 placeholder:text-navy-300 focus:border-royal-400 focus:outline-none focus:ring-2 focus:ring-royal-500/30"
+        aria-invalid={!!error}
+        aria-describedby={error ? `${name}-error` : undefined}
+        className={`w-full rounded-xl border bg-white px-4 py-3 text-sm text-navy-800 placeholder:text-navy-300 focus:outline-none focus:ring-2 ${
+          error
+            ? "border-rose-400 focus:border-rose-400 focus:ring-rose-500/25"
+            : "border-cloud focus:border-royal-400 focus:ring-royal-500/30"
+        }`}
       />
+      {error && (
+        <p
+          id={`${name}-error`}
+          className="mt-1.5 text-xs font-medium text-rose-500"
+        >
+          {error}
+        </p>
+      )}
     </div>
   );
 }
 
-function CompanyStep() {
+function FieldsStep({
+  title,
+  desc,
+  fields,
+  values,
+  errors,
+  onChange,
+}: {
+  title: string;
+  desc: string;
+  fields: Field[];
+  values: Record<string, string>;
+  errors: Record<string, string>;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+}) {
   return (
     <>
-      <StepHeading
-        title="Company information"
-        desc="Tell us about your registered business entity."
-      />
+      <StepHeading title={title} desc={desc} />
       <div className="grid gap-5 sm:grid-cols-2">
-        <Input label="Company name" placeholder="Acme Trading FZ-LLC" />
-        <Input label="Registration number" placeholder="e.g. 1234567" />
-        <Input label="Country of incorporation" placeholder="United Arab Emirates" />
-        <Input label="Business activity" placeholder="Wholesale & trade" />
-        <div className="sm:col-span-2">
-          <Input label="Company website" placeholder="https://company.com" />
-        </div>
-      </div>
-    </>
-  );
-}
-
-function DirectorStep() {
-  return (
-    <>
-      <StepHeading
-        title="Director information"
-        desc="Details of the primary director or authorised signatory."
-      />
-      <div className="grid gap-5 sm:grid-cols-2">
-        <Input label="Full name" placeholder="Jane Alexandra Doe" />
-        <Input label="Nationality" placeholder="British" />
-        <Input label="Date of birth" type="date" />
-        <Input label="Passport number" placeholder="P1234567" />
-      </div>
-    </>
-  );
-}
-
-function ContactStep() {
-  return (
-    <>
-      <StepHeading
-        title="Contact information"
-        desc="How we can reach the business during onboarding."
-      />
-      <div className="grid gap-5 sm:grid-cols-2">
-        <Input label="Email" type="email" placeholder="jane@company.com" />
-        <Input label="Phone" type="tel" placeholder="+971 50 000 0000" />
-        <div className="sm:col-span-2">
-          <Input
-            label="Registered address"
-            placeholder="Street, City, Country, Postal code"
-          />
-        </div>
+        {fields.map((f) => (
+          <div key={f.name} className={f.full ? "sm:col-span-2" : ""}>
+            <Input
+              label={f.label}
+              name={f.name}
+              type={f.type}
+              placeholder={f.placeholder}
+              value={values[f.name] ?? ""}
+              error={errors[f.name]}
+              onChange={onChange}
+            />
+          </div>
+        ))}
       </div>
     </>
   );
@@ -389,6 +509,7 @@ function DocumentsStep({
   inputRef,
   removeFile,
   formatSize,
+  docError,
 }: {
   files: UploadedFile[];
   dragOver: boolean;
@@ -398,6 +519,7 @@ function DocumentsStep({
   inputRef: React.RefObject<HTMLInputElement>;
   removeFile: (id: string) => void;
   formatSize: (b: number) => string;
+  docError: string;
 }) {
   return (
     <>
@@ -420,9 +542,11 @@ function DocumentsStep({
           (e.key === "Enter" || e.key === " ") && inputRef.current?.click()
         }
         className={`flex cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed px-6 py-10 text-center transition-colors ${
-          dragOver
-            ? "border-royal-400 bg-royal-50"
-            : "border-cloud bg-mist/60 hover:border-royal-300"
+          docError
+            ? "border-rose-300 bg-rose-50/40"
+            : dragOver
+              ? "border-royal-400 bg-royal-50"
+              : "border-cloud bg-mist/60 hover:border-royal-300"
         }`}
       >
         <span className="grid h-14 w-14 place-items-center rounded-2xl bg-white text-royal-600 shadow-soft">
@@ -444,6 +568,10 @@ function DocumentsStep({
           className="hidden"
         />
       </div>
+
+      {docError && (
+        <p className="mt-3 text-xs font-medium text-rose-500">{docError}</p>
+      )}
 
       {/* Required checklist */}
       <div className="mt-6 grid gap-2 sm:grid-cols-2">

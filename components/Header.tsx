@@ -41,6 +41,12 @@ export function Header() {
     };
   }, [open]);
 
+  // These routes provide their own page chrome.
+  const bareRoutes = ["/signin", "/register"];
+  if (bareRoutes.some((r) => pathname === r || pathname.startsWith(`${r}/`))) {
+    return null;
+  }
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
@@ -81,7 +87,7 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-2 lg:flex">
-          <Link href="/dashboard" className="btn-ghost">
+          <Link href="/signin" className="btn-ghost">
             Sign In
           </Link>
           <Link href="/register" className="btn-primary">
@@ -121,7 +127,7 @@ export function Header() {
                 </Link>
               ))}
               <div className="mt-3 grid grid-cols-2 gap-2">
-                <Link href="/dashboard" className="btn-secondary">
+                <Link href="/signin" className="btn-secondary">
                   Sign In
                 </Link>
                 <Link href="/register" className="btn-primary">

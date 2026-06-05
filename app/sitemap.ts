@@ -12,6 +12,7 @@ const routes = [
   "/about",
   "/contact",
   "/register",
+  "/signin",
   "/dashboard",
   "/legal/privacy",
   "/legal/terms",
