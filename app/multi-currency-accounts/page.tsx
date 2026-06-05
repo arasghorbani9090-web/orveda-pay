@@ -1,15 +1,16 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { PageHeader } from "@/components/PageHeader";
 import { CTASection } from "@/components/CTASection";
 import { Reveal, Stagger, StaggerItem } from "@/components/Motion";
 import { ArrowRight, Check, Globe, Pulse, Transfer, Wallet } from "@/components/Icons";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "Multi-Currency Accounts",
   description:
-    "Open a multi-currency business account with Orveda Pay. Receive and hold USD, EUR, GBP, AED, CAD, AUD, CHF and SGD from one secure platform.",
-};
+    "Open a multi-currency business account with Orveda Pay. Receive and hold USD, EUR, GBP, AED, CAD, AUD, CHF and SGD with local receiving details from one secure platform.",
+  path: "/multi-currency-accounts",
+});
 
 const currencies = [
   { code: "USD", name: "US Dollar", flag: "🇺🇸" },

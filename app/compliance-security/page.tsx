@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 import { PageHeader } from "@/components/PageHeader";
 import { CTASection } from "@/components/CTASection";
 import { Reveal, Stagger, StaggerItem } from "@/components/Motion";
@@ -13,11 +13,12 @@ import {
   ShieldCheck,
 } from "@/components/Icons";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "Compliance & Security",
   description:
     "Orveda Pay's compliance and security framework — KYC, KYB, AML procedures, data encryption, secure banking infrastructure, risk monitoring and fraud prevention.",
-};
+  path: "/compliance-security",
+});
 
 const pillars = [
   {

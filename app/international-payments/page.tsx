@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 import { PageHeader } from "@/components/PageHeader";
 import { CTASection } from "@/components/CTASection";
 import { Reveal, Stagger, StaggerItem } from "@/components/Motion";
@@ -12,11 +12,12 @@ import {
   Transfer,
 } from "@/components/Icons";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "International Payments",
   description:
-    "Send and receive international payments with Orveda Pay. SWIFT payments, cross-border settlements, supplier payments and global collections through secure banking networks.",
-};
+    "Send and receive international payments with Orveda Pay — SWIFT payments, cross-border settlements, supplier payments and global collections through secure banking networks.",
+  path: "/international-payments",
+});
 
 const features = [
   {

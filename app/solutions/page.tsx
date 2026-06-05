@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { PageHeader } from "@/components/PageHeader";
 import { CTASection } from "@/components/CTASection";
@@ -16,11 +16,12 @@ import {
   Wallet,
 } from "@/components/Icons";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "Solutions",
   description:
-    "Explore Orveda Pay solutions for global businesses — multi-currency accounts, international transfers, business collections, and compliance services.",
-};
+    "Explore Orveda Pay solutions for global businesses — multi-currency accounts, international transfers, business collections, spend management, and compliance services on one platform.",
+  path: "/solutions",
+});
 
 const solutions = [
   {

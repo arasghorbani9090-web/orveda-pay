@@ -1,15 +1,16 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { PageHeader } from "@/components/PageHeader";
 import { CTASection } from "@/components/CTASection";
 import { Reveal, Stagger, StaggerItem } from "@/components/Motion";
 import { ArrowRight, Bolt, Globe, ShieldCheck, Sparkle, Users } from "@/components/Icons";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "About Us",
   description:
     "Orveda Pay provides international financial infrastructure for global businesses — enabling companies to receive, hold and transfer funds across multiple currencies through secure, compliant networks.",
-};
+  path: "/about",
+});
 
 const values = [
   {

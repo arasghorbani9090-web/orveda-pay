@@ -1,15 +1,16 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { PageHeader } from "@/components/PageHeader";
 import { CTASection } from "@/components/CTASection";
 import { Reveal, Stagger, StaggerItem } from "@/components/Motion";
 import { ArrowRight, Check } from "@/components/Icons";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "Pricing",
   description:
-    "Transparent pricing for Orveda Pay multi-currency business accounts and international payments. Plans for startups, growing businesses and enterprises.",
-};
+    "Transparent pricing for Orveda Pay multi-currency business accounts and international payments. Flexible plans for startups, growing businesses and enterprises.",
+  path: "/pricing",
+});
 
 const plans = [
   {

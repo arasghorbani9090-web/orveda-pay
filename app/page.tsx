@@ -1,7 +1,16 @@
 import Link from "next/link";
+import { buildMetadata } from "@/lib/seo";
 import { DashboardMockup } from "@/components/DashboardMockup";
 import { CTASection } from "@/components/CTASection";
 import { Reveal, Stagger, StaggerItem } from "@/components/Motion";
+
+export const metadata = buildMetadata({
+  title: "Orveda Pay — Global Financial Infrastructure for Modern Businesses",
+  description:
+    "Open multi-currency business accounts, receive international payments, and send funds worldwide through secure, compliant banking networks. Orveda Pay is global financial infrastructure for modern businesses.",
+  path: "/",
+  absoluteTitle: true,
+});
 import {
   ArrowRight,
   Building,

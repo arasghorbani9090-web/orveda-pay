@@ -48,16 +48,32 @@ export const metadata: Metadata = {
     title: "Orveda Pay — Global Financial Infrastructure for Modern Businesses",
     description:
       "Open multi-currency business accounts, receive international payments, and send funds worldwide through secure banking networks.",
+    images: [
+      {
+        url: "/og",
+        width: 1200,
+        height: 630,
+        alt: "Orveda Pay — Global financial infrastructure for modern businesses",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Orveda Pay — Global Financial Infrastructure",
     description:
       "Multi-currency business accounts, international payments, and compliant cross-border settlements.",
+    images: ["/og"],
   },
   robots: {
     index: true,
     follow: true,
+  },
+  alternates: {
+    canonical: siteUrl,
+  },
+  other: {
+    "demo-notice":
+      "This website is a demonstration / mockup and is not a real financial service.",
   },
 };
 
