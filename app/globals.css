@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-inter: "Inter", system-ui, sans-serif;
+  --font-manrope: "Manrope", system-ui, sans-serif;
+}
+
+@layer base {
+  * {
+    @apply border-cloud;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-white text-navy-800 font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    @apply bg-royal-500/20 text-navy-900;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-mist;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-navy-200 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-navy-300;
+  }
+}
+
+@layer components {
+  .container-xl {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-royal-500 focus-visible:ring-offset-2 disabled:opacity-60;
+  }
+
+  .btn-primary {
+    @apply btn bg-royal-500 text-white shadow-glow hover:bg-royal-600 hover:-translate-y-0.5;
+  }
+
+  .btn-secondary {
+    @apply btn border border-navy-100 bg-white text-navy-800 hover:border-royal-300 hover:text-royal-600;
+  }
+
+  .btn-ghost {
+    @apply btn text-navy-700 hover:bg-mist;
+  }
+
+  .btn-emerald {
+    @apply btn bg-emerald-500 text-white shadow-soft hover:bg-emerald-600 hover:-translate-y-0.5;
+  }
+
+  .card {
+    @apply rounded-3xl border border-cloud bg-white shadow-card;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-royal-100 bg-royal-50 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-royal-600;
+  }
+
+  .section-pad {
+    @apply py-20 sm:py-24 lg:py-28;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-royal-500 via-royal-400 to-emerald-500 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-gold-dark via-gold to-gold-light bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .glass-dark {
+    background: rgba(7, 26, 53, 0.55);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+
+  .mask-fade-x {
+    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  }
+
+  .bg-radial-navy {
+    background:
+      radial-gradient(60% 60% at 80% 0%, rgba(21, 101, 255, 0.25) 0%, transparent 60%),
+      radial-gradient(50% 50% at 0% 100%, rgba(0, 196, 140, 0.18) 0%, transparent 55%),
+      #071A35;
+  }
+}
