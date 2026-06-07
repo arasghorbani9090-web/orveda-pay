@@ -83,9 +83,11 @@ export const metadata: Metadata = {
     shortcut: [{ url: "/favicon.ico" }],
   },
   manifest: "/manifest.webmanifest",
+  applicationName: "Orveda Pay",
+  category: "Finance",
   other: {
-    "demo-notice":
-      "This website is a demonstration / mockup and is not a real financial service.",
+    subject:
+      "Orveda Pay is a cross-border payments and financial operations platform for businesses, providing multi-currency business accounts and international transfers.",
   },
 };
 
