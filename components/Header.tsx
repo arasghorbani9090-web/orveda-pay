@@ -8,14 +8,14 @@ import { Logo } from "./Logo";
 import { ArrowRight, Close, Menu } from "./Icons";
 
 const nav = [
-  { label: "Home", href: "/" },
-  { label: "Solutions", href: "/solutions" },
-  { label: "Multi-Currency Accounts", href: "/multi-currency-accounts" },
-  { label: "International Payments", href: "/international-payments" },
-  { label: "Compliance & Security", href: "/compliance-security" },
-  { label: "Pricing", href: "/pricing" },
-  { label: "About Us", href: "/about" },
-  { label: "Contact", href: "/contact" },
+  { label: "Home", short: "Home", href: "/" },
+  { label: "Solutions", short: "Solutions", href: "/solutions" },
+  { label: "Multi-Currency Accounts", short: "Accounts", href: "/multi-currency-accounts" },
+  { label: "International Payments", short: "Payments", href: "/international-payments" },
+  { label: "Compliance & Security", short: "Compliance", href: "/compliance-security" },
+  { label: "Pricing", short: "Pricing", href: "/pricing" },
+  { label: "About Us", short: "About", href: "/about" },
+  { label: "Contact", short: "Contact", href: "/contact" },
 ];
 
 export function Header() {
@@ -58,7 +58,10 @@ export function Header() {
       <div className="container-xl flex h-16 items-center justify-between gap-4 lg:h-18">
         <Logo />
 
-        <nav className="hidden items-center gap-1 xl:flex" aria-label="Primary">
+        <nav
+          className="hidden items-center gap-0.5 lg:flex"
+          aria-label="Primary"
+        >
           {nav.map((item) => {
             const active =
               item.href === "/"
@@ -68,17 +71,20 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`relative rounded-full px-3 py-2 text-[13px] font-medium transition-colors ${
+                title={item.label}
+                aria-current={active ? "page" : undefined}
+                className={`relative whitespace-nowrap rounded-full px-3 py-2 text-[13.5px] font-medium tracking-tight transition-colors xl:px-3.5 xl:text-sm ${
                   active
                     ? "text-royal-600"
-                    : "text-navy-600 hover:text-navy-900"
+                    : "text-navy-600 hover:bg-navy-50 hover:text-navy-900"
                 }`}
               >
-                {item.label}
+                {item.short}
                 {active && (
                   <motion.span
                     layoutId="nav-active"
-                    className="absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-royal-500"
+                    className="absolute inset-x-3 -bottom-1 h-0.5 rounded-full bg-royal-500"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
               </Link>
