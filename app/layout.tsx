@@ -88,6 +88,8 @@ export const metadata: Metadata = {
   other: {
     subject:
       "Orveda Pay is a cross-border payments and financial operations platform for businesses, providing multi-currency business accounts and international transfers.",
+    "demo-notice":
+      "This website is a demonstration / mockup and is not a real financial service.",
   },
 };
 

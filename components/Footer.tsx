@@ -41,6 +41,25 @@ const socials = [
 export function Footer() {
   return (
     <footer className="bg-radial-navy text-navy-100">
+      {/* Demo notice — this is a mockup, not a real financial service */}
+      <div className="border-b border-gold/20 bg-gold/10">
+        <div className="container-xl flex flex-col items-center justify-center gap-2 py-3 text-center sm:flex-row">
+          <span
+            aria-hidden
+            className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-gold/20 text-xs font-bold text-gold-light"
+          >
+            !
+          </span>
+          <p className="text-sm font-semibold text-gold-light">
+            Demo only — not a real financial service.
+          </p>
+          <span className="text-sm text-navy-200">
+            This site is a design mockup; no accounts, payments, or transfers
+            are real.
+          </span>
+        </div>
+      </div>
+
       <div className="container-xl py-16 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_2fr]">
           <div>
