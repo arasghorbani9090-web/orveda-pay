@@ -1,272 +1,358 @@
-<!-- BANNER / HERO -->
+<!-- HERO -->
 <p align="center">
-  <img src="docs/banner.png" alt="Orveda Pay — Global Financial Infrastructure for Modern Businesses" width="100%" />
+  <img src="docs/banner.svg" alt="Orveda Pay — Global Account Collection & Settlement Platform" width="100%" />
 </p>
 
-<h1 align="center">Orveda Pay</h1>
+<h1 align="center">Orveda Pay — Global Account Collection &amp; Settlement Platform</h1>
 
 <p align="center">
-  <strong>Global financial infrastructure for modern businesses — a fintech platform prototype.</strong><br/>
-  Multi-currency business accounts · International payments · Compliance-first onboarding
+  <strong>A next-generation financial infrastructure concept for collecting, managing, and settling funds<br/>across multiple countries and currencies — through a single unified treasury environment.</strong>
 </p>
 
 <p align="center">
-  <a href="https://www.orvedapay.com"><img alt="Live demo" src="https://img.shields.io/badge/Live_Demo-orvedapay.com-1565FF?style=for-the-badge" /></a>
-  <img alt="Status" src="https://img.shields.io/badge/Status-Prototype-00C48C?style=for-the-badge" />
-  <img alt="License" src="https://img.shields.io/badge/License-Proprietary-071A35?style=for-the-badge" />
+  <img alt="Stage" src="https://img.shields.io/badge/Stage-Concept_%2F_Prototype-C9A24B?style=for-the-badge" />
+  <img alt="Focus" src="https://img.shields.io/badge/Strategy-GCC--First-00C48C?style=for-the-badge" />
+  <a href="https://www.orvedapay.com"><img alt="Live prototype" src="https://img.shields.io/badge/Prototype-orvedapay.com-1565FF?style=for-the-badge" /></a>
 </p>
 
 <p align="center">
   <img alt="Next.js" src="https://img.shields.io/badge/Next.js-14-000000?logo=next.js&logoColor=white" />
-  <img alt="React" src="https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black" />
   <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white" />
-  <img alt="Tailwind CSS" src="https://img.shields.io/badge/Tailwind_CSS-3-06B6D4?logo=tailwindcss&logoColor=white" />
-  <img alt="Framer Motion" src="https://img.shields.io/badge/Framer_Motion-11-0055FF?logo=framer&logoColor=white" />
-  <img alt="Vercel" src="https://img.shields.io/badge/Deployed_on-Vercel-000000?logo=vercel&logoColor=white" />
+  <img alt="React" src="https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black" />
+  <img alt="Tailwind" src="https://img.shields.io/badge/Tailwind_CSS-3-06B6D4?logo=tailwindcss&logoColor=white" />
+  <img alt="Architecture" src="https://img.shields.io/badge/Architecture-API--first-071A35" />
+  <img alt="Deploy" src="https://img.shields.io/badge/Cloud-Vercel-000000?logo=vercel&logoColor=white" />
 </p>
 
 > [!IMPORTANT]
-> **Orveda Pay is a financial technology platform prototype and product demonstration.**
-> It is **not** a licensed, regulated, or operational financial institution, and it does
-> **not** process real funds, real payments, or real customer onboarding. All dashboard
-> figures and transactions shown are illustrative sample data. See
-> [Security & Compliance Considerations](#-security--compliance-considerations).
+> **Forward-looking concept — please read.**
+> Orveda Pay is an **early-stage product concept and working prototype**. It is **not** a licensed,
+> regulated, or authorized financial institution, payment institution, e-money issuer, or bank.
+> It **holds no license or regulatory approval**, has **no banking authorization**, and **does not
+> process real customer funds, payments, or onboarding**. Every capability in this document
+> describes **product vision and future regulatory-readiness objectives**, not current legal,
+> operational, or licensing status. Forward-looking statements are aspirational and subject to
+> change. References to other companies denote *category positioning only* and imply no
+> affiliation, partnership, or endorsement.
 
 ---
 
-## 📌 Product Overview
+## 📖 Documentation Portal
 
-**Orveda Pay** is a digital banking product concept that demonstrates the end-to-end
-experience of a cross-border financial operations platform for modern businesses.
-It models how a company would open a **multi-currency business account**, complete a
-**compliance-first onboarding** flow (KYC/KYB/AML), **receive international payments**,
-and **settle cross-border transfers** — presented through a production-grade,
-enterprise-quality web experience.
-
-The project exists to showcase:
-
-- **Product thinking** — how a serious fintech onboarding and money-movement journey is structured.
-- **Design craft** — an ultra-modern, trust-oriented UI in line with leading global fintechs.
-- **Engineering quality** — a clean, typed, performant Next.js codebase and architecture.
-- **Licensing-ready architecture** — a structure designed with future regulatory compliance considerations in mind, so the concept could evolve toward a real, authorized product.
-
-🔗 **Live demonstration:** **[www.orvedapay.com](https://www.orvedapay.com)**
-
----
-
-## ✨ Key Features
-
-| Area | What it demonstrates |
+| Document | Description |
 | --- | --- |
-| 🏦 **Multi-Currency Accounts** | Hold and receive 8 major currencies (USD, EUR, GBP, AED, CAD, AUD, CHF, SGD) with local receiving details |
-| 🌍 **International Payments** | SWIFT transfers, cross-border settlement, supplier payouts, and global collections flows |
-| 🧾 **Business Onboarding Portal** | Multi-step KYC/KYB application with company, director, and contact data + encrypted document upload (drag & drop, validation, progress) |
-| 🛡️ **Compliance & Security** | KYC, KYB, AML screening, risk monitoring, and fraud-prevention concepts presented as product surfaces |
-| 📊 **Client Dashboard** | Balances, transactions, currency exchange, compliance status, and notifications (illustrative data) |
-| 🔐 **Authentication UI** | Sign-in experience with email/password and social sign-in patterns (prototype) |
-| 💳 **Pricing & Plans** | Transparent, tiered pricing presentation with FAQ |
-| ⚡ **Performance & SEO** | Statically rendered pages, metadata, sitemap, robots, Open Graph & favicons |
+| **README** (this file) | Executive whitepaper & platform overview |
+| [Architecture](docs/architecture.md) | Layered architecture, components, and data flows |
+| [Regulatory Readiness](docs/regulatory-readiness.md) | KYC / KYB / AML / monitoring as capabilities & future objectives |
+| [GCC Expansion Strategy](docs/gcc-expansion.md) | Phased market-entry plan |
+| [Product Roadmap](docs/roadmap.md) | Three-year roadmap |
 
 ---
 
-## 🏗️ Platform Architecture
+## 1. Executive Summary
 
-Orveda Pay is built as a modern, server-rendered web application on the Next.js App
-Router, deployed on Vercel's edge network. The current prototype is **front-end and
-presentation focused**; the architecture below also indicates where regulated backend
-services would integrate in a production build.
+**Orveda Pay** is a financial-technology platform concept designed to give global businesses a
+single environment to **collect, hold, convert, and settle money across borders**. Today, a
+company operating internationally typically stitches together multiple banks, payment providers,
+and spreadsheets — each with its own currencies, cut-off times, fees, and reporting. The result is
+fragmented liquidity, slow settlement, and poor treasury visibility.
+
+Orveda Pay envisions a **unified treasury layer**: global collection accounts and virtual accounts
+that let a business *receive like a local* in many markets, multi-currency wallets to *hold what
+they earn*, an FX layer to *convert on their terms*, and a settlement engine to *pay out and
+reconcile* — all behind one API-first platform.
+
+The concept is **GCC-first**, beginning with **Qatar**, then expanding across the wider Gulf, into
+Europe, and globally. It is positioned in the same category as global account/collection and
+treasury platforms — conceptually comparable to **PingPong, Wise Business, Airwallex, Payoneer,
+and Modern Treasury** — while focusing first on the specific needs of GCC businesses, marketplaces,
+exporters, importers, and SMEs.
+
+This repository contains the **product vision, architecture, and a production-grade UI prototype**
+([live](https://www.orvedapay.com)) that demonstrates the intended experience.
+
+---
+
+## 2. The Market Problem
+
+Cross-border commerce is growing, yet the financial plumbing beneath it remains fragmented,
+manual, and slow. Businesses that operate across borders consistently face:
+
+- **🌍 Fragmented international payments** — different providers and rails per corridor, each with
+  separate logins, fee schedules, currencies, and settlement timelines.
+- **🏦 Multi-bank management complexity** — maintaining accounts across several banks and countries
+  multiplies operational overhead, KYC duplication, and reconciliation effort.
+- **🧾 Account collection challenges** — receiving from international buyers, marketplaces, and
+  platforms often requires local accounts the business cannot easily obtain.
+- **📊 Treasury visibility gaps** — cash is scattered across institutions and currencies, so
+  finance teams lack a single, real-time view of position and exposure.
+- **⏳ Settlement delays** — funds sit in transit for days; payouts to suppliers, sellers, and staff
+  are slow and hard to schedule reliably.
+- **🔁 Cross-border reconciliation** — matching incoming payments to invoices across currencies,
+  references, and timezones is error-prone and labor-intensive.
+
+**Why now:** cross-border B2B payment flows are measured in the tens of trillions of dollars
+annually (industry context, not an Orveda metric), digital-first businesses are expanding into new
+markets faster than ever, and the GCC is investing heavily in financial-services modernization —
+creating room for a treasury-grade, region-first platform.
+
+---
+
+## 3. Product Vision
+
+Orveda Pay is conceived as nine integrated capabilities that together form a unified treasury
+environment:
+
+| # | Capability | What it does (concept) |
+| --- | --- | --- |
+| 1 | **Global Account Collection** | Receive funds internationally through local and virtual collection accounts across supported corridors. |
+| 2 | **Multi-Currency Wallets** | Hold balances in multiple currencies; convert only when advantageous. |
+| 3 | **Merchant Accounts** | Dedicated accounts for businesses and marketplaces to receive and organize revenue. |
+| 4 | **Virtual Accounts** | Programmatically issued account details for collections, sub-ledgers, and per-customer references. |
+| 5 | **Treasury Dashboard** | A single real-time view of balances, flows, exposure, and reconciliation status. |
+| 6 | **Settlement Engine** | Schedule, batch, and execute payouts with predictable timing and full audit trails. |
+| 7 | **FX Conversion Layer** | Transparent currency conversion with clear pricing at the point of action. |
+| 8 | **Corporate Payments Hub** | Supplier, payroll, and B2B payments managed from one control plane. |
+| 9 | **Marketplace Payout Infrastructure** | Split, hold, and disburse funds to sellers and partners at scale. |
+
+🔗 **Experience the prototype:** **[www.orvedapay.com](https://www.orvedapay.com)**
+
+---
+
+## 4. Platform Architecture
+
+Orveda Pay is designed as a layered, API-first platform. The prototype today is the presentation
+and product layer; the diagram also marks the **integration points where regulated services and
+banking partners would connect in a future, authorized build**.
+
+<p align="center">
+  <img src="docs/architecture.svg" alt="Orveda Pay layered platform architecture" width="100%" />
+</p>
+
+| Layer | Responsibility |
+| --- | --- |
+| **Customer Layer** | Businesses, marketplaces, exporters, importers, freelancers, enterprises — via web portal & API. |
+| **Merchant Layer** | Merchant accounts, virtual accounts, marketplace sub-ledgers, payout rails. |
+| **Compliance Layer** | KYC/KYB onboarding, AML & sanctions screening, transaction monitoring, risk scoring. |
+| **Treasury Layer** | Unified ledger, multi-currency wallets, FX conversion, liquidity & reconciliation. |
+| **Settlement Layer** | Settlement engine, payout scheduling, batch processing, corporate payments hub. |
+| **Banking Layer** | *(Future)* integration points for regulated banking and payment-rail partners. |
+
+> 📐 A deeper component-level breakdown is in **[docs/architecture.md](docs/architecture.md)**.
+
+---
+
+## 5. Core Flows
+
+### 5.1 Money Flow
+
+```mermaid
+flowchart LR
+    A[International Payer] -->|pays| B[Collection / Virtual Account]
+    B --> C[Multi-Currency Wallet]
+    C --> D{FX Conversion Layer}
+    D -->|hold| C
+    D -->|convert| E[Treasury Ledger]
+    E --> F[Settlement Engine]
+    F --> G[Beneficiary / Supplier / Seller]
+```
+
+### 5.2 Account Collection Flow
+
+```mermaid
+sequenceDiagram
+    participant Biz as Business
+    participant OP as Orveda Pay
+    participant Payer as International Payer
+    Biz->>OP: Complete onboarding (KYC / KYB)
+    OP-->>Biz: Issue local & virtual collection accounts
+    Biz->>Payer: Share account details / invoice
+    Payer->>OP: Send payment to collection account
+    OP->>OP: Screen, credit wallet, reconcile to invoice
+    OP-->>Biz: Funds visible in Treasury Dashboard
+```
+
+### 5.3 Merchant Settlement Flow
 
 ```mermaid
 flowchart TD
-    U[Business User / Browser] -->|HTTPS| CDN[Vercel Edge Network / CDN]
-    CDN --> APP[Next.js 14 App Router<br/>React 18 + TypeScript]
-
-    subgraph APP[Next.js Application]
-      direction TB
-      MKT[Marketing & Product Pages<br/>Home · Solutions · Pricing · About]
-      ONB[Onboarding Portal<br/>KYC / KYB / Document Upload]
-      DASH[Client Dashboard UI]
-      AUTHUI[Authentication UI]
-      OG[Dynamic OG Image · Sitemap · Robots]
-    end
-
-    APP -. future integration .-> AUTH[Auth & Session Service]
-    APP -. future integration .-> KYC[KYC / KYB / AML Providers]
-    APP -. future integration .-> CORE[Core Ledger & Accounts]
-    APP -. future integration .-> PAY[Payment Rails<br/>SWIFT · Local · FX]
-    APP -. future integration .-> DB[(Encrypted Data Store)]
-
-    classDef future fill:#EAF1FF,stroke:#1565FF,stroke-dasharray:5 5,color:#071A35;
-    class AUTH,KYC,CORE,PAY,DB future;
+    Buyer[Buyer] -->|payment| MP[Marketplace Collection Account]
+    MP --> Split[Split and Sub-Ledger]
+    Split --> Hold[Hold / Reserve Rules]
+    Hold --> Sched[Payout Scheduling]
+    Sched --> SE[Settlement Engine]
+    SE --> Seller[Seller / Partner Account]
+    SE --> Recon[Reconciliation and Reporting]
 ```
 
-**Design principles**
+### 5.4 Compliance Workflow
 
-- **Component-driven UI** — reusable, typed React components with a shared design system (tokens for color, typography, motion).
-- **Edge-first delivery** — static prerendering for marketing/product pages; dynamic rendering only where needed (e.g., generated social images).
-- **Separation of concerns** — presentation today, with clearly marked integration points for regulated services tomorrow.
-- **Accessibility & SEO** — semantic markup, focus states, per-page metadata, canonical URLs, sitemap, and robots.
+```mermaid
+flowchart TD
+    App[Applicant] --> KYC[KYC / KYB Verification]
+    KYC --> Screen[AML &amp; Sanctions Screening]
+    Screen --> Risk[Risk Scoring]
+    Risk --> Decision{Decision}
+    Decision -->|Approve| Active[Active Account]
+    Decision -->|Review| Manual[Manual Compliance Review]
+    Decision -->|Reject| Declined[Declined]
+    Active --> Monitor[Ongoing Transaction Monitoring]
+    Monitor -->|anomaly| Manual
+```
 
----
+### 5.5 Treasury Operations
 
-## 🖼️ Screenshots
-
-> Captured from the live deployment at [www.orvedapay.com](https://www.orvedapay.com).
-
-### Home — Global Financial Infrastructure
-![Home page](docs/screenshots/home.png)
-
-### Solutions
-![Solutions](docs/screenshots/solutions.png)
-
-### Multi-Currency Accounts
-![Multi-Currency Accounts](docs/screenshots/multi-currency-accounts.png)
-
-### International Payments
-![International Payments](docs/screenshots/international-payments.png)
-
-### Compliance & Security
-![Compliance & Security](docs/screenshots/compliance-security.png)
-
-### Pricing
-![Pricing](docs/screenshots/pricing.png)
-
-### About
-![About](docs/screenshots/about.png)
-
-### Contact
-![Contact](docs/screenshots/contact.png)
-
-### Business Onboarding Portal
-![Register / Onboarding](docs/screenshots/register.png)
-
-### Client Dashboard (illustrative data)
-![Dashboard](docs/screenshots/dashboard.png)
-
-### Sign In
-![Sign In](docs/screenshots/signin.png)
+```mermaid
+flowchart LR
+    Bal[Multi-Currency Balances] --> Recon[Reconciliation]
+    Recon --> Pos[Unified Position View]
+    Pos --> FX[FX / Liquidity Decisions]
+    FX --> Pay[Payments &amp; Settlement]
+    Pay --> Report[Reporting &amp; Audit Trail]
+    Report --> Pos
+```
 
 ---
 
-## 🧰 Technology Stack
+## 6. GCC Expansion Strategy
 
-| Layer | Technology |
+A region-first rollout, deepening capability and compliance readiness before broadening reach.
+
+```mermaid
+flowchart LR
+    P1["Phase 1<br/>Qatar"] --> P2["Phase 2<br/>UAE · Saudi Arabia<br/>Bahrain · Kuwait · Oman"]
+    P2 --> P3["Phase 3<br/>Europe"]
+    P3 --> P4["Phase 4<br/>Global"]
+```
+
+| Phase | Markets | Strategic intent |
+| --- | --- | --- |
+| **Phase 1** | 🇶🇦 Qatar | Establish the home market, product-market fit, and compliance-readiness foundations. |
+| **Phase 2** | 🇦🇪 UAE · 🇸🇦 Saudi Arabia · 🇧🇭 Bahrain · 🇰🇼 Kuwait · 🇴🇲 Oman | Extend across the GCC with shared corridors and treasury depth. |
+| **Phase 3** | 🇪🇺 Europe | Enter major trade-corridor markets and broaden currency coverage. |
+| **Phase 4** | 🌍 Global | Scale collection and settlement coverage worldwide. |
+
+> Detail in **[docs/gcc-expansion.md](docs/gcc-expansion.md)**.
+
+---
+
+## 7. Regulatory Readiness
+
+> **These are platform capabilities and future regulatory-readiness objectives — not claims of
+> any license, authorization, or approval.** Orveda Pay does not currently hold any financial
+> license and is not authorized to provide regulated financial services.
+
+Orveda Pay is being designed so that, *if and when* the platform pursues authorization in a given
+jurisdiction (via direct licensing or a sponsored/partner model), the compliance foundations are
+already first-class product surfaces:
+
+- **KYC** — identity verification of individuals during onboarding.
+- **KYB** — verification of business entities, ownership structures, and beneficial owners.
+- **AML** — anti-money-laundering controls including sanctions and PEP screening.
+- **Transaction Monitoring** — continuous, rule- and risk-based monitoring of flows.
+- **Risk Scoring** — customer and transaction risk assessment to drive decisions and reviews.
+- **Compliance Workflows** — case management, manual review, audit trails, and reporting.
+
+These map directly to the **Compliance Layer** in the architecture and the **Compliance Workflow**
+diagram above. A production, authorized build would additionally require an appropriate regulatory
+framework per market, vetted third-party verification/screening providers, independent security
+assessment, and a secured backend — **none of which are claimed to exist today**.
+
+> More in **[docs/regulatory-readiness.md](docs/regulatory-readiness.md)**.
+
+---
+
+## 8. Commercial Opportunities
+
+| Opportunity | Concept |
 | --- | --- |
-| **Framework** | [Next.js 14](https://nextjs.org/) (App Router) |
-| **Language** | [TypeScript 5](https://www.typescriptlang.org/) |
-| **UI Library** | [React 18](https://react.dev/) |
-| **Styling** | [Tailwind CSS 3](https://tailwindcss.com/) with a custom design system |
-| **Animation** | [Framer Motion 11](https://www.framer.com/motion/) |
-| **Imagery** | Dynamic Open Graph image generation via `next/og` (Edge runtime) |
-| **Fonts** | Inter & Manrope via `next/font` (self-hosted, optimized) |
-| **Hosting** | [Vercel](https://vercel.com/) (edge network, automatic CI/CD from GitHub) |
-| **SEO** | Built-in sitemap & robots, per-page metadata, canonical URLs, web manifest |
-| **Tooling** | Playwright (screenshot automation), Sharp (icon generation) — dev only |
+| 🛒 **Marketplace Payments** | Collection + split + payout infrastructure for platforms and marketplaces. |
+| 🏦 **SME Banking Infrastructure** | Treasury-grade accounts and tooling for small and medium businesses. |
+| 🧾 **Merchant Collection Accounts** | Local-style collection accounts for global merchants. |
+| 👥 **Payroll Infrastructure** | Cross-border and multi-currency payroll disbursement. |
+| 🌐 **B2B Cross-Border Payments** | Supplier and corporate payments across corridors. |
+| 💼 **Treasury Management** | Unified balances, FX, reconciliation, and reporting as a service. |
 
 ---
 
-## 🔐 Security & Compliance Considerations
+## 9. Technology
 
-> **Status: prototype.** The points below describe the product concept and the
-> architecture's intended direction. They are **not** statements that any regulatory
-> approval, license, certification, or audit has been obtained.
+| Area | Stack |
+| --- | --- |
+| **Framework** | Next.js 14 (App Router) |
+| **Language** | TypeScript 5 |
+| **UI** | React 18 + Tailwind CSS 3 + Framer Motion |
+| **Architecture** | API-first, component-driven, edge-rendered presentation layer |
+| **Deployment** | Cloud-native on Vercel (automatic CI/CD from GitHub) |
+| **Imagery / SEO** | Dynamic OG image generation, sitemap, robots, metadata, web manifest |
 
-**Current prototype**
-- Served entirely over **HTTPS/TLS** with automatic certificates.
-- **No real funds, payments, or transfers** are processed.
-- Dashboard balances and transactions are **illustrative sample data**.
-- A visible demonstration notice is shown in the application.
-
-**Designed with future regulatory compliance considerations**
-- **KYC / KYB** identity and business verification flows as first-class product surfaces.
-- **AML screening** and **risk-monitoring** concepts surfaced in the UX.
-- **Encrypted document handling** patterns for onboarding artifacts.
-- Clear **integration points** for regulated providers (identity, screening, ledger, payment rails).
-
-**What a production, authorized build would require (not yet in place)**
-- A licensed or sponsored regulatory framework appropriate to each operating jurisdiction.
-- Real identity/AML verification providers, audited security controls, and a secured backend.
-- Independent security assessment and data-protection (e.g., privacy-by-design) review.
-
-📄 The repository also includes illustrative legal pages (Privacy Policy, Terms & Conditions, AML Policy) authored for demonstration purposes.
+**Engineering principles:** typed end-to-end, component-driven UI with a shared design system,
+edge-first delivery, clear separation between today's presentation layer and tomorrow's regulated
+service integrations.
 
 ---
 
-## 🗺️ Product Roadmap
+## 10. Product Roadmap (3 Years)
 
-> Indicative direction for evolving the prototype toward a production concept.
+| Horizon | Theme | Focus |
+| --- | --- | --- |
+| **Year 1 · H1** | Foundation | Product concept, design system, prototype UX, onboarding & dashboard surfaces *(done)* |
+| **Year 1 · H2** | Identity & Data | Real authentication, encrypted data store, API layer, account state |
+| **Year 2 · H1** | Verified Onboarding | Integrated KYC/KYB/AML provider workflows; compliance case management |
+| **Year 2 · H2** | Treasury & FX | Multi-currency ledger, FX layer, reconciliation engine (sandbox integrations) |
+| **Year 3 · H1** | Settlement | Settlement engine, payout scheduling, marketplace split infrastructure |
+| **Year 3 · H2** | Readiness & Scale | Security assessment, regulatory-readiness program, GCC market expansion |
 
-- [x] **Phase 0 — Product & Brand** · UX, design system, marketing & product pages
-- [x] **Phase 1 — Experience Prototype** · Onboarding portal, dashboard UI, auth UI, SEO
-- [ ] **Phase 2 — Real Authentication** · OAuth / email auth, session management, user records
-- [ ] **Phase 3 — Backend & Data** · Encrypted data store, API layer, real account state
-- [ ] **Phase 4 — Verified Onboarding** · Integrated KYC/KYB/AML provider workflows
-- [ ] **Phase 5 — Payments Integration** · Sandbox payment-rail and FX integrations
-- [ ] **Phase 6 — Compliance & Hardening** · Security assessment, regulatory framework, audits
-
----
-
-## 🚀 Deployment Information
-
-- **Production URL:** **[https://www.orvedapay.com](https://www.orvedapay.com)**
-- **Hosting:** Vercel — automatic production deployments on every push to `main`.
-- **Build:** `next build` (static prerendering + edge functions for dynamic image generation).
-
-### Run locally
-
-```bash
-# 1. Install dependencies
-npm install
-
-# 2. Start the dev server
-npm run dev          # http://localhost:3000
-
-# 3. Production build
-npm run build && npm run start
-```
-
-### Project structure
-
-```
-orveda-pay/
-├─ app/                # Next.js App Router: pages, layout, route handlers
-│  ├─ (pages)/         # home, solutions, pricing, about, contact, legal, …
-│  ├─ dashboard/       # client dashboard UI
-│  ├─ register/        # business onboarding portal
-│  ├─ signin/          # authentication UI
-│  ├─ og/              # dynamic Open Graph image (Edge)
-│  ├─ sitemap.ts       # SEO sitemap
-│  └─ robots.ts        # SEO robots
-├─ components/         # reusable UI components (Header, Footer, sections, icons)
-├─ lib/                # shared helpers (SEO metadata builder)
-├─ public/             # static assets, favicons, verification files
-├─ docs/               # README banner & screenshots
-└─ scripts/            # icon + screenshot generation (dev tooling)
-```
+> Detailed roadmap in **[docs/roadmap.md](docs/roadmap.md)**.
 
 ---
 
-## 👤 Author
+## 11. Product Prototype — Screenshots
 
-**Aras Ghorbani** — Product & Front-End Engineering
+> Captured from the live prototype at [www.orvedapay.com](https://www.orvedapay.com). Dashboard
+> figures are **illustrative sample data**.
 
-Designed and built the Orveda Pay product concept end to end: brand, UX, design system,
-and a production-grade Next.js implementation deployed on Vercel.
+| | |
+| :---: | :---: |
+| ![Home](docs/screenshots/home.png) | ![Treasury Dashboard](docs/screenshots/dashboard.png) |
+| **Platform Home** | **Treasury Dashboard** *(illustrative)* |
+| ![Multi-currency](docs/screenshots/multi-currency-accounts.png) | ![International payments](docs/screenshots/international-payments.png) |
+| **Multi-Currency Accounts** | **International Payments** |
+| ![Onboarding](docs/screenshots/register.png) | ![Compliance](docs/screenshots/compliance-security.png) |
+| **Onboarding (KYC / KYB)** | **Compliance & Security** |
+| ![Solutions](docs/screenshots/solutions.png) | ![Pricing](docs/screenshots/pricing.png) |
+| **Solutions** | **Pricing** |
+
+---
+
+## 12. Founder
+
+**Aras Ghorbani**
+**Founder · Product Architect · FinTech Systems Designer**
+
+Conceived the Orveda Pay platform vision and designed its product, architecture, and brand. Built
+the production-grade prototype end to end — from the design system and treasury/onboarding UX to
+the API-first front-end implementation and cloud deployment.
 
 - GitHub: [@arasghorbani9090-web](https://github.com/arasghorbani9090-web)
 
+*(Role descriptions only; no third-party credentials, employers, or affiliations are claimed.)*
+
 ---
 
-## 📬 Contact
+## 13. Contact
 
-For product, partnership, or technical inquiries regarding this prototype:
+For partnership, technology, or investment conversations about this concept:
 
-- 🌐 Website: [www.orvedapay.com](https://www.orvedapay.com)
-- ✉️ Email: hello@orvedapay.com
-- 💬 Sales / Partnerships: sales@orvedapay.com
+- 🌐 **Prototype:** [www.orvedapay.com](https://www.orvedapay.com)
+- ✉️ **General:** hello@orvedapay.com
+- 💼 **Partnerships / Investment:** sales@orvedapay.com
 
 ---
 
 <p align="center">
-  <sub>© 2026 Orveda Pay · A financial technology platform prototype. Not a licensed or operational financial service.</sub>
+  <sub><strong>Disclaimer.</strong> Orveda Pay is a financial-technology product concept and prototype. It is not a
+  licensed, regulated, or operational financial institution and does not process real funds. All
+  capabilities, timelines, and market plans are forward-looking objectives subject to change.
+  Company references indicate category positioning only and imply no affiliation. © 2026 Orveda Pay.</sub>
 </p>

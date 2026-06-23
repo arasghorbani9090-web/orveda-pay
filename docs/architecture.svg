@@ -1,0 +1,96 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Orveda Pay layered platform architecture">
+  <defs>
+    <linearGradient id="hdr" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1565FF"/>
+      <stop offset="1" stop-color="#00C48C"/>
+    </linearGradient>
+    <style>
+      .t { font-family: Segoe UI, Arial, sans-serif; }
+      .layer-title { font-weight: 800; font-size: 22px; fill: #071A35; }
+      .layer-sub { font-size: 14px; fill: #5E80AE; }
+      .chip { font-size: 13px; font-weight: 600; fill: #102C52; }
+      .tag { font-size: 12px; font-weight: 700; fill: #FFFFFF; letter-spacing: 1px; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="760" rx="24" fill="#F6F8FB"/>
+  <rect x="0" y="0" width="1200" height="84" rx="24" fill="#071A35"/>
+  <rect x="0" y="50" width="1200" height="34" fill="#071A35"/>
+  <text x="40" y="52" class="t" font-size="26" font-weight="800" fill="#FFFFFF">Orveda Pay — Platform Architecture (Conceptual)</text>
+
+  <!-- helper: each layer is a rounded card with title, subtitle, and chips -->
+  <!-- Layer 1: Customer -->
+  <g transform="translate(40,108)">
+    <rect width="1120" height="98" rx="16" fill="#FFFFFF" stroke="#E2E8F2"/>
+    <rect width="8" height="98" rx="4" fill="url(#hdr)"/>
+    <text x="32" y="40" class="t layer-title">1 · Customer Layer</text>
+    <text x="32" y="68" class="t layer-sub">Businesses, marketplaces, exporters, importers, freelancers, enterprises</text>
+    <g class="t chip">
+      <rect x="640" y="26" width="150" height="30" rx="15" fill="#EAF1FF"/><text x="660" y="46">Web App / Portal</text>
+      <rect x="800" y="26" width="140" height="30" rx="15" fill="#EAF1FF"/><text x="820" y="46">Public API</text>
+      <rect x="950" y="26" width="140" height="30" rx="15" fill="#EAF1FF"/><text x="970" y="46">Mobile (future)</text>
+    </g>
+  </g>
+
+  <!-- Layer 2: Merchant -->
+  <g transform="translate(40,218)">
+    <rect width="1120" height="98" rx="16" fill="#FFFFFF" stroke="#E2E8F2"/>
+    <rect width="8" height="98" rx="4" fill="url(#hdr)"/>
+    <text x="32" y="40" class="t layer-title">2 · Merchant Layer</text>
+    <text x="32" y="68" class="t layer-sub">Merchant accounts, virtual accounts, payout rails, marketplace sub-ledgers</text>
+    <g class="t chip">
+      <rect x="640" y="26" width="150" height="30" rx="15" fill="#E2FBF3"/><text x="660" y="46">Merchant Accounts</text>
+      <rect x="800" y="26" width="140" height="30" rx="15" fill="#E2FBF3"/><text x="820" y="46">Virtual Accounts</text>
+      <rect x="950" y="26" width="140" height="30" rx="15" fill="#E2FBF3"/><text x="970" y="46">Payout Engine</text>
+    </g>
+  </g>
+
+  <!-- Layer 3: Compliance -->
+  <g transform="translate(40,328)">
+    <rect width="1120" height="98" rx="16" fill="#FFFFFF" stroke="#E2E8F2"/>
+    <rect width="8" height="98" rx="4" fill="url(#hdr)"/>
+    <text x="32" y="40" class="t layer-title">3 · Compliance Layer</text>
+    <text x="32" y="68" class="t layer-sub">KYC / KYB onboarding, AML &amp; sanctions screening, transaction monitoring, risk scoring</text>
+    <g class="t chip">
+      <rect x="640" y="26" width="150" height="30" rx="15" fill="#FBF1DE"/><text x="660" y="46">KYC / KYB</text>
+      <rect x="800" y="26" width="140" height="30" rx="15" fill="#FBF1DE"/><text x="820" y="46">AML Screening</text>
+      <rect x="950" y="26" width="140" height="30" rx="15" fill="#FBF1DE"/><text x="970" y="46">Risk Scoring</text>
+    </g>
+  </g>
+
+  <!-- Layer 4: Treasury -->
+  <g transform="translate(40,438)">
+    <rect width="1120" height="98" rx="16" fill="#FFFFFF" stroke="#E2E8F2"/>
+    <rect width="8" height="98" rx="4" fill="url(#hdr)"/>
+    <text x="32" y="40" class="t layer-title">4 · Treasury Layer</text>
+    <text x="32" y="68" class="t layer-sub">Unified balances, multi-currency wallets, FX conversion, liquidity &amp; reconciliation</text>
+    <g class="t chip">
+      <rect x="640" y="26" width="150" height="30" rx="15" fill="#EAF1FF"/><text x="660" y="46">Treasury Ledger</text>
+      <rect x="800" y="26" width="140" height="30" rx="15" fill="#EAF1FF"/><text x="820" y="46">FX Layer</text>
+      <rect x="950" y="26" width="140" height="30" rx="15" fill="#EAF1FF"/><text x="970" y="46">Reconciliation</text>
+    </g>
+  </g>
+
+  <!-- Layer 5: Settlement -->
+  <g transform="translate(40,548)">
+    <rect width="1120" height="98" rx="16" fill="#FFFFFF" stroke="#E2E8F2"/>
+    <rect width="8" height="98" rx="4" fill="url(#hdr)"/>
+    <text x="32" y="40" class="t layer-title">5 · Settlement Layer</text>
+    <text x="32" y="68" class="t layer-sub">Settlement engine, payout scheduling, batch processing, corporate payments hub</text>
+    <g class="t chip">
+      <rect x="640" y="26" width="150" height="30" rx="15" fill="#E2FBF3"/><text x="660" y="46">Settlement Engine</text>
+      <rect x="800" y="26" width="140" height="30" rx="15" fill="#E2FBF3"/><text x="820" y="46">Batch Payouts</text>
+      <rect x="950" y="26" width="140" height="30" rx="15" fill="#E2FBF3"/><text x="970" y="46">Payments Hub</text>
+    </g>
+  </g>
+
+  <!-- Layer 6: Banking -->
+  <g transform="translate(40,658)">
+    <rect width="1120" height="72" rx="16" fill="#071A35"/>
+    <rect width="8" height="72" rx="4" fill="url(#hdr)"/>
+    <text x="32" y="34" class="t" font-size="22" font-weight="800" fill="#FFFFFF">6 · Banking Layer</text>
+    <text x="32" y="58" class="t" font-size="14" fill="#94AECF">Integration points for regulated banking &amp; payment-rail partners (future) — SWIFT, local rails, FX liquidity</text>
+    <rect x="980" y="22" width="110" height="28" rx="14" fill="#C9A24B" fill-opacity="0.2"/>
+    <text x="1035" y="41" text-anchor="middle" class="t" font-size="12" font-weight="700" fill="#E6CB86">FUTURE</text>
+  </g>
+</svg>
