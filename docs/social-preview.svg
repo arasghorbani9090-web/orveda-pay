@@ -1,0 +1,74 @@
+<svg width="1280" height="640" viewBox="0 0 1280 640" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Orveda Pay — GCC-focused financial infrastructure platform">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="640" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#04101F"/>
+      <stop offset="0.55" stop-color="#071A35"/>
+      <stop offset="1" stop-color="#0A2143"/>
+    </linearGradient>
+    <linearGradient id="mark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1565FF"/>
+      <stop offset="1" stop-color="#00C48C"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="0.9" cy="0.0" r="0.7">
+      <stop offset="0" stop-color="#1565FF" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#1565FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0.0" cy="1" r="0.6">
+      <stop offset="0" stop-color="#00C48C" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#00C48C" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M44 0H0V44" fill="none" stroke="#FFFFFF" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1280" height="640" fill="url(#bg)"/>
+  <rect width="1280" height="640" fill="url(#grid)"/>
+  <rect width="1280" height="640" fill="url(#glowA)"/>
+  <rect width="1280" height="640" fill="url(#glowB)"/>
+
+  <!-- Brand mark + wordmark -->
+  <g transform="translate(84,80)">
+    <rect width="60" height="60" rx="17" fill="url(#mark)"/>
+    <path d="M17 31 L27 41 L44 21" fill="none" stroke="#FFFFFF" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="80" y="41" font-family="Segoe UI, Arial, sans-serif" font-size="32" font-weight="800" fill="#FFFFFF">Orveda <tspan fill="#5E9CFF">Pay</tspan></text>
+  </g>
+
+  <!-- Concept pill -->
+  <g transform="translate(1000,90)">
+    <rect width="196" height="42" rx="21" fill="#C9A24B" fill-opacity="0.16" stroke="#C9A24B" stroke-opacity="0.5"/>
+    <text x="98" y="28" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" fill="#E6CB86">CONCEPT · PROTOTYPE</text>
+  </g>
+
+  <!-- Headline -->
+  <text x="84" y="280" font-family="Segoe UI, Arial, sans-serif" font-size="62" font-weight="800" fill="#FFFFFF" letter-spacing="-1.5">GCC-Focused Financial</text>
+  <text x="84" y="352" font-family="Segoe UI, Arial, sans-serif" font-size="62" font-weight="800" letter-spacing="-1.5" fill="url(#mark)">Infrastructure Platform</text>
+
+  <!-- Subhead -->
+  <text x="84" y="410" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#94AECF">Corporate collection &amp; settlement network · multi-currency treasury · cross-border orchestration.</text>
+
+  <!-- Category tags -->
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="600" fill="#C9D6E8">
+    <g transform="translate(84,460)">
+      <rect width="200" height="38" rx="19" fill="#FFFFFF" fill-opacity="0.06" stroke="#FFFFFF" stroke-opacity="0.12"/>
+      <text x="22" y="25">Collection Layer</text>
+    </g>
+    <g transform="translate(300,460)">
+      <rect width="190" height="38" rx="19" fill="#FFFFFF" fill-opacity="0.06" stroke="#FFFFFF" stroke-opacity="0.12"/>
+      <text x="22" y="25">Treasury Layer</text>
+    </g>
+    <g transform="translate(506,460)">
+      <rect width="200" height="38" rx="19" fill="#FFFFFF" fill-opacity="0.06" stroke="#FFFFFF" stroke-opacity="0.12"/>
+      <text x="22" y="25">Settlement Layer</text>
+    </g>
+    <g transform="translate(722,460)">
+      <rect width="210" height="38" rx="19" fill="#FFFFFF" fill-opacity="0.06" stroke="#FFFFFF" stroke-opacity="0.12"/>
+      <text x="22" y="25">Compliance Layer</text>
+    </g>
+  </g>
+
+  <!-- Footer line -->
+  <line x1="84" y1="548" x2="1196" y2="548" stroke="#FFFFFF" stroke-opacity="0.1"/>
+  <text x="84" y="586" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#94AECF">www.orvedapay.com</text>
+  <text x="1196" y="586" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#94AECF">For enterprises, SMEs &amp; international trade</text>
+</svg>
